@@ -13,11 +13,11 @@ blue='\033[0;34m'
 green='\033[0;32m'
 clear='\033[0m'
 
-for item in "${urls[@]}"
+for url in "${urls[@]}"
 do
-echo -n -e "Downloading $blue${item}$clear"
-curl --silent --output "temp/${item:43:7}" ${item}
-curl -I --silent --output "temp/${item:43:7}.headers" ${item}
+echo -n -e "Downloading $blue${url}$clear"
+curl --silent --output "temp/${url:43:7}" ${url}
+curl -I --silent --output "temp/${url:43:7}.headers" ${url}
 echo -e "${green}Done${clear}"
 done
 
